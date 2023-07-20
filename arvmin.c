@@ -122,7 +122,7 @@ int main(void){
     while(nelem > 0){
         min = ptrHeap[0];
         removerMin(ptrHeap, &nelem);
-        if(find(ptrConjunto, min.vertice1) != find(ptrConjunto, min.vertice2)){ //Se não fecha ciclo, pesoTotal += min.peso e une os conjuntos de u e v 
+        if(find(ptrConjunto, min.vertice1) != find(ptrConjunto, min.vertice2)){
             pesoTotal += min.peso;
             une(ptrConjunto, ptrComprimento, min.vertice1, min.vertice2);
         } 
@@ -131,25 +131,3 @@ int main(void){
     printf("%d\n", pesoTotal);
     return 0;
 }
-
-// Para debugar:
-// 6 9
-// 1 3 5
-// 1 2 1
-// 2 3 2
-// 2 5 2
-// 3 5 2
-// 2 4 5
-// 4 5 1
-// 4 6 2
-// 5 6 4
-
-//RESPOSTA CERTA: 8
-
-// 5 6
-// 1 3 1
-// 1 2 1
-// 2 3 5
-// 1 4 3
-// 4 5 4
-// 2 5 2
